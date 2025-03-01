@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #218838;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px auto;
+            width: 250px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList">
+        <li>Task 1</li>
+        <li>Task 2</li>
+    </ul>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+            if (taskText === "") {
+                alert("Please enter a valid task.");
+                return;
+            }
+            
+            const taskList = document.getElementById("taskList");
+            const listItem = document.createElement("li");
+            listItem.innerText = taskText;
+            taskList.appendChild(listItem);
+            
+            taskInput.value = ""; // Clear input field after adding task
+        }
+    </script>
+</body>
+</html>
+
+
