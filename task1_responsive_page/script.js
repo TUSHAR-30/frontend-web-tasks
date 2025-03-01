@@ -2,6 +2,7 @@ const links = document.querySelectorAll(".nav-links li a");
 const logoLink = document.querySelector(".logo-link");
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
+const body = document.body;
 
 function setActiveLink(target) {
     links.forEach(link => link.classList.remove("active"));
@@ -24,6 +25,7 @@ links.forEach(link => {
         navLinks.classList.remove("smallScreen");
         hamburger.classList.toggle("cancel-icon")
         logoLink.classList.toggle("smallScreen");
+        body.classList.remove("no-scroll"); 
     });
 });
 
@@ -40,7 +42,9 @@ hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("cancel-icon")
     if (navLinks.classList.contains("smallScreen")) {
         hamburger.innerHTML = "&#10006;"; // Change to cancel icon (✖)
+        body.classList.add("no-scroll");  // Disable scrolling
     } else {
         hamburger.innerHTML = "&#9776;"; // Change back to menu icon (☰)
+        body.classList.remove("no-scroll"); // Enable scrolling
     }
 });

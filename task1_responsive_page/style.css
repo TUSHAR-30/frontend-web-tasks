@@ -7,6 +7,12 @@ body {
     color: #333;
 }
 
+/* Prevent scrolling when sidebar is open */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /* header styling start  */
 
 header {
@@ -33,6 +39,7 @@ header {
 nav {
     display: flex;
     align-items: center;
+    z-index: 100
 }
 
 .nav-links {
