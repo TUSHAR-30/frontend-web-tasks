@@ -1,0 +1,208 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* header styling start  */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0056b3;
+    color: white;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a.active {
+    color: #ffcc00;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger:hover {
+    font-weight: bold;
+}
+
+/* header styling end  */
+
+
+
+
+/* main content start */
+
+main {
+    padding: 0 20px;
+    text-align: center;
+}
+
+section{
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    /* padding: 20px 0; */
+}
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.features-list li {
+    background: url('https://cdn-icons-png.flaticon.com/512/845/845646.png') no-repeat left center;
+    background-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* main content end */
+
+
+
+
+/* footer styling start */
+
+footer {
+    background: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* footer styling end */
+
+
+
+
+@media (max-width: 768px) {
+    .cancel-icon {
+        border: 2px solid;
+        padding: 2px 8px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cancel-icon:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: -20px;
+        /* top: 42px; */
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background: #0056b3;
+        text-align: center;
+        padding-top: 72px;
+        padding-inline: 10px;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.smallScreen {
+        right: 0;
+    }
+
+    .logo-link.smallScreen {
+        opacity: 0;
+        transition: 0.4s opacity;
+    }
+
+    /* .nav-links li {
+        margin: 20px 0;
+    } */
+    .nav-links li a {
+        font-size: 22px;
+        display: block;
+        padding: 8px;
+        transition: background 0.3s;
+    }
+
+    .nav-links li a:hover {
+        background: #ffcc00;
+        color: #0056b3;
+        border-radius: 5px;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+    }
+}
